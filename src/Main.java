@@ -1,15 +1,14 @@
-
 public class Main {
 
     public static void main(String[] args) {
 
         Library aNewLibrary = new Library();
-Book b1 = new Book("Ilon Mask","Make IT",2010,1);
-Book b2 = new Book("Andreev","Full",2011,2);
 
+        Book b1 = new Book("Ilon Mask", "Make IT", 2010, 1);
+        Book b2 = new Book("Andreev", "Full", 2011, 2);
 
-aNewLibrary.allBooks.add(b1);
-aNewLibrary.allBooks.add(b2);
+        aNewLibrary.allBooks.add(b1);
+        aNewLibrary.allBooks.add(b2);
 
 //        aNewLibrary.allBooks.add( new Book ("Ilon Mask","Make IT",2010,1));
 //        aNewLibrary.allBooks.add( new Book ("Andreev","Full",2011,2));
@@ -19,8 +18,8 @@ aNewLibrary.allBooks.add(b2);
 //        aNewLibrary.allBooks.add( new Book ("Martin2","Code",2007,5));
 
         Person user1 = new Person("Sasha", 12);
-        Person user3 = new Person("Masha", 15);
         Person user2 = new Person("Alex", 20);
+        Person user3 = new Person("Masha", 15);
 
 //        aNewLibrary.showAllBooksInLibrary();
 
@@ -32,5 +31,5 @@ aNewLibrary.allBooks.add(b2);
 
         user1.showHistory();
         user2.showHistory();
-     }
+    }
 }
