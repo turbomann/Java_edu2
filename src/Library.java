@@ -8,6 +8,7 @@ public class Library {
     public List<Book> allBooks = new ArrayList<Book>();
     private Map<Book, Person> assignmentBook = new HashMap<Book, Person>();
 
+
     private Book findBook(String bookName) {
         Book foundBook = null;
 
@@ -21,17 +22,25 @@ public class Library {
         return foundBook;
     }
 
+    public void showAllBooksInLibrary() {
+        for (Book book : allBooks) {
+            System.out.println("Title = " + "'" + book.getTitle() + "'" + " Author = " + "'" + book.getAuthor() + "'");
+        }
 
-    public void giveBook(String bookName, Person pers) {
+    }
+
+    public void giveBookToPerson(String bookName, Person pers) {
 
         Book foundBook = findBook(bookName);
-
         if (assignmentBook.containsKey(foundBook)) {
-            System.out.println("The Book Alredy on hand");
+            System.out.println("The Book " + foundBook.getTitle() + " Alredy on hand on " + pers.getFirstName());
 
-        } else if (foundBook != null) {
+        } else
+
+            if (foundBook != null) {
             assignmentBook.put(foundBook, pers);
-            System.out.println("The book " + bookName + " was given " + pers.toString());
+            pers.historyList.add(foundBook);
+            System.out.println("The book " + "'" + bookName + "'" + " was given " + pers.getFirstName());
         }
 
 
@@ -46,7 +55,7 @@ public class Library {
             if (map.getKey().equals(foundedBook) & map.getValue().equals(pers)) {
                 assignmentBook.remove(foundedBook);
 
-                System.out.println("The book " + foundedBook + " was returned back");
+                System.out.println("The book " + foundedBook.getTitle() + " was returned back " + pers.getFirstName());
             }
 
         }
